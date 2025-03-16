@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    text-align: center;
+    font-family: "Poetsen One";
+    background-color: white;
+    height: 100%;
+}
+header { grid-area: header; }
+footer { grid-area: footer; }
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        'header'
+        'main'
+        'footer';
+    gap: 10px;
+    padding: 10px;
+    height: 100%;
+}
+.grid-container > div {
+    padding: 10px;
+}
+
+.content {
+    grid-area: main;
+    color: green;
+}
+.support {
+    color: #444444;
+    font-style: italic;
+    font-weight: bold;
+}
+.tr_selector {
+    display: inline-block;
+    font-size: 50%;
+    vertical-align: super;
+    cursor: pointer;
+    position: relative;
+}
+.tr_selector > p {
+    text-decoration: underline;
+}
+.dropdown_item {
+    background-color: white;
+    text-align: left;
+    border-style: solid;
+    border-color: #444444;
+    border-width: 1px;
+}
+.dropdown_item > p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 1%;
+}
+.dropdown_item:hover {
+    background-color: #CCCCCC;
+}
+.dropdown_name {
+    color: black;
+}
+.dropdown_lang {
+    color: #444444;
+    font-size: 75%;
+}
+.fa {
+    width: 10px;
+    height: 10px;
+}
+#ref { display: inline-block; }
+#tr_drop {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    height: 25vh;
+    top: -25vh;
+    overflow: scroll;
+    width: 20vw;
+    border-style: solid;
+    border-color: #444444;
+    border-width: 1px;
+}
+@media only screen and (orientation: landscape) {
+  .content {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  #tr_drop {
+    height: 25vh;
+    top: -25vh;
+    width: 20vw;
+  }
+}
+@media only screen and (orientation: portrait) {
+  .content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  #tr_drop {
+    height: 15vh;
+    top: -15vh;
+    width: 40vw;
+  }
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222222;
+    }
+    .support {
+        color: #CCCCCC;
+    }
+    .dropdown_item {
+        background-color: #444444;
+        border-color: #CCCCCC;
+    }
+    .dropdown_lang {
+        color: #CCCCCC;
+    }
+    #tr_drop {
+        border-color: #CCCCCC;
+    }
+    .dropdown_item:hover {
+        background-color: #222222;
+    }
+}
