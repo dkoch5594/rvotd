@@ -1,3 +1,4 @@
+//https://github.com/dkoch5594/rvotd
 "use-strict";
 // global constants
 const COOKIE_NAME = "rvotd_tr_pr";
