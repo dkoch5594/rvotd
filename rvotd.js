@@ -127,7 +127,8 @@ function setContentFontSize() {
         // start too big, get smaller
         let fontSize = 100;
         content.style.fontSize = fontSize + 'px';
-        while (grid.scrollHeight > grid.clientHeight) {
+        while ((grid.scrollHeight > grid.clientHeight)
+            || (grid.scrollWidth > grid.clientWidth)) {
             fontSize--;
             content.style.fontSize = fontSize + 'px';
             // avoid infinite loops
