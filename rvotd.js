@@ -111,6 +111,18 @@ async function getVerse() {
         if (response.ok) {
             return response.json();
         }
+        else {
+            throw new Error("Response is not OK")
+        }
+    })
+    .catch(e => {
+        return new Promise((resolve, reject) => {
+            resolve({
+                text: "The LORD works in mysterious ways. We couldn't find your verse. Try another translation.", 
+                reference: reference,
+                translation_id: translation
+            });
+        })
     })
     .then(json => {
         document.getElementById("verse").innerHTML = json.text.trim();
